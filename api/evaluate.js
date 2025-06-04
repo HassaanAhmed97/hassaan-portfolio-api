@@ -92,14 +92,15 @@ Respond in a professional tone, as this will be displayed on a portfolio website
 `;
 
   try {
-    const xaiApiKey = process.env.XAI_API_KEY;
-    const response = await fetch('https://api.x.ai/v1/completions', {
+    const openaiApiKey = process.env.OPENAI_API_KEY;
+    const response = await fetch('https://api.openai.com/v1/completions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${xaiApiKey}`
+        'Authorization': `Bearer ${openaiApiKey}`
       },
       body: JSON.stringify({
+        model: 'text-davinci-003', // Adjust model based on your OpenAI plan
         prompt: prompt,
         max_tokens: 500,
         temperature: 0.7
