@@ -11,6 +11,11 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'User input is required' });
   }
 
+  // Add CORS headers
+  res.setHeader('Access-Control-Allow-Origin', 'https://hassaanahmed97.github.io');
+  res.setHeader('Access-Control-Allow-Methods', 'POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
   const prompt = `
 You are an AI assistant evaluating how well a candidate fits a given role or query based on their background. Below is the candidate's information, followed by the user's query. Assess the fit and provide a detailed response explaining why the candidate is a good match (or not) for the role or query.
 
@@ -100,7 +105,7 @@ Respond in a professional tone, as this will be displayed on a portfolio website
         'Authorization': `Bearer ${openaiApiKey}`
       },
       body: JSON.stringify({
-        model: 'text-davinci-003', // Adjust model based on your OpenAI plan
+        model: 'text-davinci-003',
         prompt: prompt,
         max_tokens: 500,
         temperature: 0.7
