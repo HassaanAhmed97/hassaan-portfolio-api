@@ -1,0 +1,11 @@
+{
+  "name": "hassaan-portfolio-api",
+  "version": "1.0.0",
+  "main": "api/evaluate.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
