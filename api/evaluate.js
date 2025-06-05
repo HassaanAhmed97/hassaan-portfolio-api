@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
     return res.status(400).json({ error: 'User input is required' });
   }
 
-  // Add CORS headers
+  // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', 'https://hassaanahmed97.github.io');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
